@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the API Hub: HipChat feature.
+ */
+
+include_once 'apihub_hipchat.features.inc';

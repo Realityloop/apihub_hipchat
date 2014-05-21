@@ -1,0 +1,37 @@
+name = API Hub: HipChat
+description = HipChat API definition for the API Hub module.
+core = 7.x
+package = API Hub
+version = 7.x-1.0
+project = apihub_hipchat
+
+
+
+; Dependencies
+
+dependencies[] = apihub
+dependencies[] = ctools
+
+
+
+; Features
+
+features[apihub_apis][] = hipchat
+
+features[apihub_resources][] = 0363fc788f17cca394ce96b8d4cf317b
+features[apihub_resources][] = 2338f18a23bd450e3ecdd4064581266c
+features[apihub_resources][] = 2fd7e066c0b59803b8abcce72cae6688
+features[apihub_resources][] = 318a7ccbe6cf981bec51c4feb4089729
+features[apihub_resources][] = 3385d80047022f52f598d8851b81b94a
+features[apihub_resources][] = 5c87befcbc80f44db7373b23d94fa71b
+features[apihub_resources][] = 64d68603b6d4e281b24aac55f55de4a7
+features[apihub_resources][] = 68d68bf19c2b4445b49b3f21a9c47eb6
+features[apihub_resources][] = 6991c18cba0951c9e58d78ab71fb51aa
+features[apihub_resources][] = abb5d9a96739a9b89feb99bb72421bc2
+features[apihub_resources][] = c08327f58a0494279a25a8a519ac6aea
+features[apihub_resources][] = ea9ed20eefccef7e3202250c8ab79d84
+features[apihub_resources][] = eb1734a01d90f83552c312cb96954868
+
+features[ctools][] = apihub:apihub:1
+
+features[features_api][] = api:2
