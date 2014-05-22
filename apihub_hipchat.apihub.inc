@@ -17,7 +17,6 @@ function apihub_hipchat_apihub_apis() {
   $api->admin_title = 'HipChat';
   $api->description = '';
   $api->url = 'http://api.hipchat.com/v1';
-  $api->handler = '';
   $export['hipchat'] = $api;
 
   return $export;
@@ -46,6 +45,15 @@ function apihub_hipchat_apihub_resources() {
       'options' => '',
       'required' => 0,
       'description' => 'Include deleted users in response.',
+    ),
+  );
+  $resource->settings = array(
+    'rules' => array(
+      'provides' => array(
+        'name' => 'Users',
+        'id' => 'users',
+        'type' => 'list<hipchat_user>',
+      ),
     ),
   );
   $export['0363fc788f17cca394ce96b8d4cf317b'] = $resource;
@@ -83,6 +91,15 @@ function apihub_hipchat_apihub_resources() {
       'options' => '',
       'required' => 0,
       'description' => 'Your timezone. Must be a supported timezone - https://www.hipchat.com/docs/api/timezones. (default: UTC)',
+    ),
+  );
+  $resource->settings = array(
+    'rules' => array(
+      'provides' => array(
+        'name' => 'Messages',
+        'id' => 'messages',
+        'type' => 'list<hipchat_mesage>',
+      ),
     ),
   );
   $export['2338f18a23bd450e3ecdd4064581266c'] = $resource;
@@ -152,6 +169,15 @@ random|Random',
       'description' => 'Background color for message. One of "yellow", "red", "green", "purple", "gray", or "random". (default: yellow)',
     ),
   );
+  $resource->settings = array(
+    'rules' => array(
+      'provides' => array(
+        'name' => 'Status',
+        'id' => 'status',
+        'type' => 'text',
+      ),
+    ),
+  );
   $export['2fd7e066c0b59803b8abcce72cae6688'] = $resource;
 
   $resource = new stdClass();
@@ -173,6 +199,15 @@ random|Random',
       'description' => 'ID or email address of the user.',
     ),
   );
+  $resource->settings = array(
+    'rules' => array(
+      'provides' => array(
+        'name' => 'Undeleted',
+        'id' => 'undeleted',
+        'type' => 'boolean',
+      ),
+    ),
+  );
   $export['318a7ccbe6cf981bec51c4feb4089729'] = $resource;
 
   $resource = new stdClass();
@@ -192,6 +227,15 @@ random|Random',
       'options' => '',
       'required' => 1,
       'description' => 'ID of the room.',
+    ),
+  );
+  $resource->settings = array(
+    'rules' => array(
+      'provides' => array(
+        'name' => 'Room',
+        'id' => 'room',
+        'type' => 'hipchat_room',
+      ),
     ),
   );
   $export['3385d80047022f52f598d8851b81b94a'] = $resource;
@@ -261,6 +305,15 @@ random|Random',
       'options' => '',
       'required' => 0,
       'description' => 'User\'s timezone. Must be a supported timezone - https://www.hipchat.com/docs/api/timezones. (default: UTC)',
+    ),
+  );
+  $resource->settings = array(
+    'rules' => array(
+      'provides' => array(
+        'name' => 'User',
+        'id' => 'user',
+        'type' => 'hipchat_user',
+      ),
     ),
   );
   $export['5c87befcbc80f44db7373b23d94fa71b'] = $resource;
@@ -340,6 +393,15 @@ random|Random',
       'description' => 'User\'s timezone. Must be a supported timezone - https://www.hipchat.com/docs/api/timezones.',
     ),
   );
+  $resource->settings = array(
+    'rules' => array(
+      'provides' => array(
+        'name' => 'User',
+        'id' => 'user',
+        'type' => 'hipchat_user',
+      ),
+    ),
+  );
   $export['64d68603b6d4e281b24aac55f55de4a7'] = $resource;
 
   $resource = new stdClass();
@@ -377,6 +439,15 @@ random|Random',
       'description' => 'Name of the service changing the topic. (default: API)',
     ),
   );
+  $resource->settings = array(
+    'rules' => array(
+      'provides' => array(
+        'name' => 'Status',
+        'id' => 'status',
+        'type' => 'text',
+      ),
+    ),
+  );
   $export['68d68bf19c2b4445b49b3f21a9c47eb6'] = $resource;
 
   $resource = new stdClass();
@@ -398,6 +469,15 @@ random|Random',
       'description' => '',
     ),
   );
+  $resource->settings = array(
+    'rules' => array(
+      'provides' => array(
+        'name' => 'Deleted',
+        'id' => 'deleted',
+        'type' => 'boolean',
+      ),
+    ),
+  );
   $export['6991c18cba0951c9e58d78ab71fb51aa'] = $resource;
 
   $resource = new stdClass();
@@ -410,6 +490,15 @@ random|Random',
   $resource->method = 'GET';
   $resource->path = '/rooms/list';
   $resource->parameters = array();
+  $resource->settings = array(
+    'rules' => array(
+      'provides' => array(
+        'name' => 'Rooms',
+        'id' => 'rooms',
+        'type' => 'list<hipchat_room>',
+      ),
+    ),
+  );
   $export['abb5d9a96739a9b89feb99bb72421bc2'] = $resource;
 
   $resource = new stdClass();
@@ -463,6 +552,15 @@ random|Random',
       'description' => 'Whether or not to enable guest access for this room.',
     ),
   );
+  $resource->settings = array(
+    'rules' => array(
+      'provides' => array(
+        'name' => 'Room',
+        'id' => 'room',
+        'type' => 'hipchat_room',
+      ),
+    ),
+  );
   $export['c08327f58a0494279a25a8a519ac6aea'] = $resource;
 
   $resource = new stdClass();
@@ -484,6 +582,15 @@ random|Random',
       'description' => 'ID or email address of the user.',
     ),
   );
+  $resource->settings = array(
+    'rules' => array(
+      'provides' => array(
+        'name' => 'User',
+        'id' => 'user',
+        'type' => 'hipchat_user',
+      ),
+    ),
+  );
   $export['ea9ed20eefccef7e3202250c8ab79d84'] = $resource;
 
   $resource = new stdClass();
@@ -503,6 +610,15 @@ random|Random',
       'options' => '',
       'required' => 1,
       'description' => 'ID or email address of the user.',
+    ),
+  );
+  $resource->settings = array(
+    'rules' => array(
+      'provides' => array(
+        'name' => 'Deleted',
+        'id' => 'deleted',
+        'type' => 'boolean',
+      ),
     ),
   );
   $export['eb1734a01d90f83552c312cb96954868'] = $resource;

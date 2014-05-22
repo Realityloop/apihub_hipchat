@@ -11,6 +11,7 @@ project = apihub_hipchat
 
 dependencies[] = apihub
 dependencies[] = ctools
+dependencies[] = rules_data_info
 
 
 
@@ -33,5 +34,11 @@ features[apihub_resources][] = ea9ed20eefccef7e3202250c8ab79d84
 features[apihub_resources][] = eb1734a01d90f83552c312cb96954868
 
 features[ctools][] = apihub:apihub:1
+features[ctools][] = rules_data_info:rules_data_info:1
 
 features[features_api][] = api:2
+
+features[rules_data_info][] = hipchat_file
+features[rules_data_info][] = hipchat_mesage
+features[rules_data_info][] = hipchat_room
+features[rules_data_info][] = hipchat_user
